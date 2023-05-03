@@ -31,6 +31,11 @@ async function run() {
             const result = await categories.find({}).toArray();
             res.send(result);
         })
+        app.get('/categories/:categoryname', async (req, res) => {
+            const param = req.params.categoryname;
+            const result = await courses.findOne({category: param});
+            res.send(result);
+        })
     }
     finally {
 
