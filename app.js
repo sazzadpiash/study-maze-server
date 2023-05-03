@@ -6,6 +6,9 @@ const port = process.env.PORT || 5000;
 const app = express();
 app.use(cors());
 
+// USER_NAME = study-maze
+// PASSWORD = amar-study-maze
+
 const uri = `mongodb+srv://${process.env.USER_NAME}:${process.env.PASSWORD}@cluster0.06w34xu.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
     serverApi: {
