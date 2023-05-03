@@ -17,10 +17,15 @@ const client = new MongoClient(uri, {
 
 async function run() {
     try {
-        const countries = client.db('study-maze').collection('countries');
+        const courses = client.db('study-maze').collection('courses');
+        const categories = client.db('study-maze').collection('categories');
 
-        app.get('/countries', async (req, res) => {
-            const result = await countries.find({}).toArray();
+        app.get('/courses', async (req, res) => {
+            const result = await courses.find({}).toArray();
+            res.send(result);
+        })
+        app.get('/categories', async (req, res) => {
+            const result = await categories.find({}).toArray();
             res.send(result);
         })
     }
