@@ -33,6 +33,7 @@ async function run() {
         })
         app.get('/courses/:id', async (req, res) => {
             const param = req.params.id;
+            console.log(param);
             const result = await courses.findOne({_id: new ObjectId(param)});
             res.send(result);
         })
